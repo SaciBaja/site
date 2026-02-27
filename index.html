@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Baja</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head> 
+    <body>
+    <section class="header bg-home">
+       <nav>
+        <a href="index.html"><img src="img/logoR.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="equipe.html">EQUIPE</a></li>
+                <li><a href="">TRAJETÓRIA</a></li>
+                <li><a href="">PATROCINADORES</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+       </nav>
+    
+        <div class="text-box">
+            <h1>S<span class="a">A</span>CI BAJA</h1>
+            <p class="countdown-title">Próxima competição em:</p>
+            <div class="countdown-container">
+                <div class="timer-box">
+                    <span id="days">00</span>
+                    <p>Dias</p>
+                </div>
+                <div class="timer-box">
+                    <span id="hours">00</span>
+                    <p>Horas</p>
+                </div>
+                <div class="timer-box">
+                    <span id="minutes">00</span>
+                    <p>Minutos</p>
+                </div>
+                <div class="timer-box">
+                    <span id="seconds">00</span>
+                    <p>Segundos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--- Quem Somos -->
+    
+    <section class="block2">
+        <section class="info">
+            <div class="blur-circle-right"></div>
+            <h1>Quem Somos?</h1>
+            <p>Fundada em 1999 na Universidade Federal de Itajubá, a Saci Baja UNIFEI é a primeira equipe de competição técnologica da universidade.
+                Nosso objetivo é projetar, construir e competir com veículos Baja SAE, enfrentando provas que simulam condições extremas, tanto de terreno quanto de desempenho.
+                A equipe promove o desenvolvimento técnico e interpessoal dos seus membros, preparando futuros engenheiros para os desafios reais da indústria.
+            </p>
+        </section>
+    </section>
+    <!------------------------ subsistemas -------------------------->
+    <div class="blur-circle-left"></div>
+    <section class="block3">
+        <section class="areas">
+            <h1>Subsistemas</h1>
+            <div class="cards">
+                <div class="areas-description">
+                    <h2>Técnicos</h2>
+                    <div class="item-hover">
+                        <p>Powertrain</p>
+                        <span class="tooltip-box">Maximiza potência, tração e eficiência do veículo.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Suspensão & Direção</p>
+                        <span class="tooltip-box">Garantem estabilidade, conforto, transposição de obstáculos e manobrabilidade.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Freios</p>
+                        <span class="tooltip-box">Assegura segurança, controle e eficiência nas paradas.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Análise Estrutural</p>
+                        <span class="tooltip-box">Garante resistência, segurança e otimização dos componentes.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Design & Ergonomia</p>
+                        <span class="tooltip-box">Equilibram conforto, eficiência e desempenho.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Eletrônica</p>
+                        <span class="tooltip-box">Aprimora controle, monitoramento e desempenho do veículo.</span>
+                    </div>
+                </div>
+                <div class="areas-description">
+                    <h2>Gestão</h2>
+                    <div class="item-hover">
+                        <p>Financeiro</p>
+                        <span class="tooltip-box">Planeja o orçamento, controla gastos e apoia captação.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Redes Sociais</p>
+                        <span class="tooltip-box">Divulga conquistas e engaja o público.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Eventos</p>
+                        <span class="tooltip-box">Organiza ações internas e externas.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Suprimentos</p>
+                        <span class="tooltip-box">Compra, organiza e distribuí materiais.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>Patrocínio</p>
+                        <span class="tooltip-box">Busca e gerencia parcerias com empresas.</span>
+                    </div>
+                    <div class="item-hover">
+                        <p>TI</p>
+                        <span class="tooltip-box">Mantem sistemas e organização digital.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="redirect">
+                <button>Conheça nossa equipe</button>
+            </div>
+        </section>
+    </section>
+    <!------------------ rodapé -------------->
+    <section class="footer">
+        <h2>BUILDING CARS, DEVELOPING PEOPLE</h2>
+        <div class="footer-content">
+            <div class="box">
+                <h3>Contatos</h3>
+                <div class="box-container">
+                    <a href="https://www.instagram.com">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.instagram.com">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3688.3969030972926!2d-45.44643888965758!3d-22.414082311125814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1771632257578!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section class="footer">
+
+    <script src="script.js"></script>
+    </body>
+</html> 
