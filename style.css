@@ -15,6 +15,7 @@ html{
 }
 .bg-home { background-image: radial-gradient(rgba(0, 0, 0, 0.4)), url(img/carroLama.jpeg); }
 .bg-equipe { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/equipe2022.jpg); }
+.bg-patrocinadores { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/bgPatrocinadores.jpg); }
 body{
     overflow-x: hidden;
     background-color: #000;
@@ -76,6 +77,9 @@ nav .fa{
     flex-direction: column;
     align-items: center;
 }
+.text-box h1.patrocinadores{
+    font-size: clamp(2rem, 8vw, 4rem);
+}
 .text-box h1 {
     font-size: 62px;
     color: white;
@@ -87,7 +91,7 @@ nav .fa{
     margin-bottom: 50px; 
 }
 
-.countdown-title, .equipe-title {
+.countdown-title, .equipe-title, .patrocinadores-title{
     font-size: 1.1rem;
     color: white;
     font-weight: 400;
@@ -481,7 +485,7 @@ iframe:hover{
         transform: translateY(0px);
     }
 }
-.block2, .block3, .subsist-time{
+.block2, .block3, .subsist-time, .relatos, .empresas{
     animation: appear 8s linear ;
     animation-timeline: view();
     animation-range: entry 0 cover 50%;
@@ -514,6 +518,7 @@ iframe:hover{
 .line {
     flex-grow: 1;   
     background-color:#6f0606;
+    height: 1.6px;
 }
 
 .divider-title {
@@ -530,7 +535,7 @@ iframe:hover{
     gap: 20px;            
     flex-wrap: wrap;       
 }
-.gestao-time{
+.relatos{
     padding-bottom: 80px;
 }
 .card {
@@ -601,71 +606,128 @@ iframe:hover{
     color: #6f0606; 
 }
 
-.book {
-  position: relative;
-  border-radius: 10px;
-  width: 220px;
-  height: 300px;
-  background-color:#3b3b3b;
-  -webkit-box-shadow: 1px 1px 12px #000;
-  box-shadow: 1px 1px 12px #000;
-  -webkit-transform: preserve-3d;
-  -ms-transform: preserve-3d;
-  transform: preserve-3d;
-  -webkit-perspective: 2000px;
-  perspective: 2000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+/* From Uiverse.io by alexruix */ 
+.cardEx {
+ --background: linear-gradient(to left, #6f0606 0%, #eb0101 180%);
+ width: 190px;
+ height: 254px;
+ padding: 5px;
+ border-radius: 1rem;
+ background: #f7ba2b;
+ background: var(--background);
+ position: relative;
+ z-index: 1;
 }
 
-.cover {
-  top: 0;
+.cardEx::after {
+ position: absolute;
+ content: "";
+ top: 30px;
+ left: 0;
+ right: 0;
+ z-index: -1;
+ height: 100%;
+ width: 100%;
+ transform: scale(0.8);
+ filter: blur(25px);
+ background: #f7ba2b;
+ background: var(--background);
+ transition: opacity .5s;
+}
+
+.cardEx-info {
+ --color: #181818;
+ background: var(--color);
+ width: 100%;
+ height: 100%;
+ border-radius: .7rem;
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
+}
+
+.cardEx .title {
   position: absolute;
-  background-color:#1a1a1a;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform-origin: 0;
-  -ms-transform-origin: 0;
-  transform-origin: 0;
-  -webkit-box-shadow: 1px 1px 12px #000;
-  box-shadow: 1px 1px 12px #000;
+  font-weight: bold;
+  letter-spacing: .1em;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-size: 0.8rem;
+}
+
+/*Hover*/
+.photo-container, .info-user {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.cardEx:hover .title {
+  opacity: 1;
+}
+.cardEx:hover .photo-container,
+.cardEx:hover .info-user {
+  opacity: 0;
+  transform: scale(0.9); 
+}
+.cardEx:hover::after {
+ opacity: 0;
+}
+.cardEx:hover .cardEx-info {
+ color: #f7ba2b;
+ transition: color 1s;
+}
+
+.parceiro-card {
+  max-width: 800px;
+  margin: auto; 
   display: flex;
-  flex-direction: column; 
+  flex-wrap: wrap; 
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 20px; 
   padding: 20px;
-  box-sizing: border-box;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
-.book:hover .cover {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: rotatey(-80deg);
-  -ms-transform: rotatey(-80deg);
-  transform: rotatey(-80deg);
+.img-parceiro {
+  width: 300px; 
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  padding: 10px;
 }
 
-.book-p {
-  font-size: 10px;
-  padding-left: 45px;
-  font-weight: 300;
+.texto-parceiro {
+  flex: 1; 
+  min-width: 200px; 
 }
 
+.logos-parceiros{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;  
+}
+
+.logos-parceiros img{
+    width: 200px; 
+    height: auto;
+    display: block;
+    padding: 10px;
+}
+
+.logos-parceiros .falcaoimg{
+    width: 100px; 
+    height: auto;
+}
+
+.logos-parceiros .cabelautoimg{
+    width: 300px; 
+    height: auto;
+}
+
+.logos-parceiros .tekbondimg, .fitassulimg, .ansysimg{
+    filter: brightness(0) invert(1);   
+}
