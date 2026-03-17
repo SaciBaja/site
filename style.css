@@ -731,3 +731,11 @@ iframe:hover{
 .logos-parceiros .tekbondimg, .fitassulimg, .ansysimg{
     filter: brightness(0) invert(1);   
 }
+
+.timeline-date-text{
+    color: #fff;
+}
+
+.timeline-text{
+    color: #fff; 
+}
