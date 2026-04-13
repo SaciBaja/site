@@ -15,6 +15,7 @@ html{
 }
 .bg-home { background-image: radial-gradient(rgba(0, 0, 0, 0.4)), url(img/carroLama.jpeg); }
 .bg-equipe { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/equipe2022.jpg); }
+.bg-trajetoria {background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/trajetoria.jpg);}
 .bg-patrocinadores { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/bgPatrocinadores.jpg); }
 body{
     overflow-x: hidden;
@@ -862,6 +863,7 @@ iframe:hover{
   z-index: -3;
   background-color: #0a0a0a;
   position: relative;
+  padding-bottom: 70px;
 }
 
 .margin-bottom-xlarge {
