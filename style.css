@@ -232,7 +232,7 @@ p{
     rgba(0,0,0,0.2)
   );
 }
-.content {
+.contentHome {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -546,62 +546,6 @@ iframe:hover{
 
 .social-links a:hover {
     color: #6f0606; 
-}
-
-.review-card {
-    width: 700px;
-    background: #666;
-    padding: 30px;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    border-radius: 5px;
-    color: #111;
-}
-
-/* lado esquerdo */
-.user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 180px;
-}
-
-/* avatar */
-.avatar {
-    width: 120px;
-    height: 120px;
-    background: #000;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-/* info */
-.user-info {
-    text-align: center;
-    color: #fff;
-}
-
-.user-info h3 {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-}
-
-.user-info p{
-  align-items: center;
-}
-
-.linkedin {
-    padding: 4px 6px;
-    border-radius: 3px;
-    font-size: 0.9rem;
-}
-.review-text {
-    flex: 1;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #111;
 }
 
 .parceiro-card {
