@@ -14,7 +14,7 @@ html{
     position: relative;
 } 
 .bg-subsistemas { background-image: radial-gradient(rgba(0, 0, 0, 0.4)), url(img/carroLama.jpeg); }
-.bg-equipe { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/equipe2022.jpg); }
+.bg-equipe { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/equipe26.jpeg); }
 .bg-trajetoria {background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/trajetoria.jpg);}
 .bg-patrocinadores { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/bgPatrocinadores.jpg); }
 .bg-home {background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/capaSubsist.jpg);}
@@ -920,6 +920,7 @@ iframe:hover{
  background: var(--background);
  position: relative;
  z-index: 1;
+ margin: 0 auto;
 }
 
 .cardEx::after {
@@ -976,7 +977,7 @@ iframe:hover{
 }
 
 .title.expanded{
-  opacity: 1;          /* visível sem precisar do hover */
+  opacity: 1;        
   pointer-events: auto;
   position: absolute;
   inset: 0;
@@ -1035,4 +1036,48 @@ iframe:hover{
 .cardEx:hover .cardEx-info {
  color: #f7ba2b;
  transition: color 1s;
+}
+
+.mySwiper {
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;
+    padding-bottom: 50px; 
+    padding-left: 80px;   
+    padding-right: 80px;  
+    box-sizing: border-box;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+    color: #6f0606 !important; 
+}
+
+.swiper-button-prev {
+    left: 10px !important; 
+}
+.swiper-button-next {
+    right: 10px !important; 
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #6f0606 !important; 
+}
+
+@media screen and (max-width: 600px) {
+    .mySwiper {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+    .swiper-button-next::after, 
+    .swiper-button-prev::after {
+        font-size: 24px !important; 
+    }
 }

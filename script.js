@@ -53,17 +53,35 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const allAnimatedElements = document.querySelectorAll('.animate');
     allAnimatedElements.forEach((element) => observer.observe(element));
+
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1, // Exibe 1 card por vez no celular
+        spaceBetween: 30, // Espaço entre os cards
+        loop: true, // Faz o slider rodar infinitamente
+        
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        }
+    });
 });
 
 document.addEventListener('click', function(e) {
-  // Usar o closest() é uma boa prática. Garante que se você colocar um ícone dentro do botão no futuro, o clique ainda funcione perfeitamente.
   const btn = e.target.closest('.read-more');
-  
   if (btn) {
     e.stopPropagation(); 
 
     const title = btn.parentElement;
+    // Encontra o elemento principal do card
+    const card = btn.closest('.cardEx'); 
+
+    // Alterna a classe no título e no card
     title.classList.toggle('expanded');
+    card.classList.toggle('aberto'); 
 
     if (title.classList.contains('expanded')) {
       btn.textContent = 'Leia menos';
