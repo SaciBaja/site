@@ -1,4 +1,4 @@
-const targetDate = new Date("Março 25, 2026 00:00:00").getTime(); //data da competição
+const targetDate = new Date("October 14, 2026 00:00:00").getTime(); //data da competição
 
 const updateCountdown = () => {
     const now = new Date().getTime();
@@ -31,27 +31,16 @@ function hideMenu(){
     navLinks.style.right = "-200px";
 }
 
-window.addEventListener('scroll', () => {
-  const section = document.querySelector('.section-timeline');
-  const bar = document.querySelector('.timeline_progress-bar');
-
-  const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-  const sectionBottom = sectionTop + section.offsetHeight;
-  const scrollMid = window.scrollY + window.innerHeight * 0.5;
-
-  if (scrollMid >= sectionBottom) {
-    // Passou da timeline: trava a barra no fim
-    bar.style.position = 'absolute';
-    bar.style.top = '0';
-    bar.style.bottom = '0';
-    bar.style.height = 'auto';
-    bar.style.inset = 'unset';
-  } else {
-    // Ainda dentro da timeline: comportamento normal
-    bar.style.position = 'fixed';
-    bar.style.height = '50vh';
-    bar.style.top = '';
-    bar.style.bottom = '';
-    bar.style.inset = '0 auto 50vh';
-  }
+document.addEventListener("DOMContentLoaded", ()=> {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('in-view');
+                return;
+            }
+            entry.target.classList.remove('in-view');
+        });
+    });
+    const allAnimatedElements = document.querySelectorAll('.animate');
+    allAnimatedElements.forEach((element) => observer.observe(element));
 });

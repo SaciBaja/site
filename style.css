@@ -12,11 +12,12 @@ html{
     background-position: center;
     background-size: cover;
     position: relative;
-}
-.bg-home { background-image: radial-gradient(rgba(0, 0, 0, 0.4)), url(img/carroLama.jpeg); }
+} 
+.bg-subsistemas { background-image: radial-gradient(rgba(0, 0, 0, 0.4)), url(img/carroLama.jpeg); }
 .bg-equipe { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/equipe2022.jpg); }
 .bg-trajetoria {background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/trajetoria.jpg);}
 .bg-patrocinadores { background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/bgPatrocinadores.jpg); }
+.bg-home {background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/capaSubsist.jpg);}
 body{
     overflow-x: hidden;
     background-color: #000;
@@ -82,7 +83,7 @@ nav .fa{
     font-size: clamp(2rem, 8vw, 4rem);
 }
 .text-box h1 {
-    font-size: 62px;
+    font-size: 70px;
     color: white;
     font-weight: 600;
     letter-spacing: 5px;
@@ -178,110 +179,76 @@ p{
 
 /* ------- áreas -------  */
 .block3{
-    background-color: rgb(0, 0, 0);
     width: 100%;
     min-height: 500px;
     height: 600px;
-}
-.areas{
-    width: 90%;
-    height: 460px;
-    margin: auto;
-    text-align: center;
-    padding-top: 50px;
-    background-color:#6f06069f;
-    border-radius: 5px;
-    opacity: 0.7;
-    box-shadow:  0px 2px 5px #6f06069f;;
-}
-.areas h1{
-    color:#fff;
-    border-bottom: 1px solid rgb(255, 255, 255); 
-    margin-top: 10px;
-    margin-bottom: 40px;
-    font-weight: 500;
-}
-.cards{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 140px;
 }
-.cards h2{
-    border-bottom: 1px solid rgb(255, 255, 255); 
-    padding-bottom: 10px;
+.card-info {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  transform: skewX(-8deg);
+  margin: 2%;
 }
-.areas-description p{
-    font-size: 20px;
-    padding: 5px;
+.card-info-par{
+  position: relative;
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  transform: skewX(-8deg);
+  top: -80px;
+  margin: 2%;
 }
-.areas-description h2{
-    margin-bottom: 15px;
-    color: #ffffff;
-    font-weight: 400;
-}
-.areas-description h2 i{
-    font-size: 16px;
-}
-.item-hover {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    width: fit-content;
-    margin: 0 auto; 
-}
-.tooltip-box {
-    visibility: hidden;
+
+@keyframes slideIn {
+  0% {
     opacity: 0;
-    position: absolute;
-    bottom: 120%; 
-    left: 50%;   
-    transform: translateX(-50%);
-    width: 200px;
-    background-color: gray;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    z-index: 99;
-    transition: all 0.3s ease;
-    pointer-events: none; 
-}
-.tooltip-box::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: gray transparent transparent transparent;
-}
-.item-hover:hover .tooltip-box {
-    visibility: visible;
+    transform: translateX(100px) skewX(-8deg);
+  }
+  100% {
     opacity: 1;
-    content: "";
+    transform: translateX(0) skewX(-8deg);
+  }
 }
-button{
-    background-color:#6f06069f;
-    border-color: #fff;
-    color: #fff;
-    border-width: 1px;
-    border-radius: 5px;
-    padding: 10px 15px;
-    margin-top: 40px;
-    font-size: 16px;
-    cursor: pointer; 
-    transition: all 0.3s ease;
+.card-info.in-view , .card-info-par.in-view {
+  animation: slideIn 0.8s ease-out forwards;
 }
-button:hover {
-    background-color: rgba(139, 19, 19, 0.9); 
-    transform: translateY(-3px); 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); 
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-button:active {
-    transform: translateY(-1px); 
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.2)
+  );
 }
+.content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+.number {
+  font-size: 48px;
+  font-weight: bold;
+  display: block;
+}
+.title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
 @media screen and (max-width: 600px) {
     .block3 {
         height: auto;
@@ -292,35 +259,6 @@ button:active {
         flex-direction: column;
         align-items: center;
         margin: 0 auto;
-    }
-    .areas {
-        width: 90%;
-        height: auto;
-        margin: 0 auto;
-        padding: 30px 20px;
-        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); 
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px; 
-    }
-    .areas-description p {
-        font-size: 18px; 
-    }
-    button {
-        padding: 15px; 
-        font-size: 18px; 
-        margin-top: 25px; 
-    }
-    button:hover {
-        transform: none;
-        box-shadow: none;
-    }
-    button:active {
-        background-color: #6f0606;
-        transform: scale(0.95); 
     }
 }
 
@@ -346,6 +284,9 @@ button:active {
     margin-bottom: 30px;
     display: inline-block;
     position: relative;
+}
+.footer h2.in-view{
+  animation: slideIn 0.8s ease-out forwards;
 }
 .footer-content {
     display: flex;
@@ -486,14 +427,14 @@ iframe:hover{
         transform: translateY(0px);
     }
 }
-.block2, .block3, .subsist-time, .relatos, .empresas{
+.block2, .subsist-time, .relatos, .empresas, .subsist-section{
     animation: appear 8s linear ;
     animation-timeline: view();
     animation-range: entry 0 cover 50%;
 }
 
 @media screen and (max-width: 600px) {
-    .block2, .block3{
+    .block2{
     animation: appear 8s linear ;
     animation-timeline: view();
     animation-range: entry 0 cover 30%;
@@ -607,77 +548,60 @@ iframe:hover{
     color: #6f0606; 
 }
 
-/* From Uiverse.io by alexruix */ 
-.cardEx {
- --background: linear-gradient(to left, #6f0606 0%, #eb0101 180%);
- width: 190px;
- height: 254px;
- padding: 5px;
- border-radius: 1rem;
- background: #f7ba2b;
- background: var(--background);
- position: relative;
- z-index: 1;
+.review-card {
+    width: 700px;
+    background: #666;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-radius: 5px;
+    color: #111;
 }
 
-.cardEx::after {
- position: absolute;
- content: "";
- top: 30px;
- left: 0;
- right: 0;
- z-index: -1;
- height: 100%;
- width: 100%;
- transform: scale(0.8);
- filter: blur(25px);
- background: #f7ba2b;
- background: var(--background);
- transition: opacity .5s;
+/* lado esquerdo */
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 180px;
 }
 
-.cardEx-info {
- --color: #181818;
- background: var(--color);
- width: 100%;
- height: 100%;
- border-radius: .7rem;
- display: flex;
- flex-direction: column;
- text-align: center;
- justify-content: center;
- align-items: center;
- overflow: hidden;
+/* avatar */
+.avatar {
+    width: 120px;
+    height: 120px;
+    background: #000;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
-.cardEx .title {
-  position: absolute;
-  font-weight: bold;
-  letter-spacing: .1em;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  font-size: 0.8rem;
+/* info */
+.user-info {
+    text-align: center;
+    color: #fff;
 }
 
-/*Hover*/
-.photo-container, .info-user {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+.user-info h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
 }
-.cardEx:hover .title {
-  opacity: 1;
+
+.user-info p{
+  align-items: center;
 }
-.cardEx:hover .photo-container,
-.cardEx:hover .info-user {
-  opacity: 0;
-  transform: scale(0.9); 
+
+.linkedin {
+    padding: 4px 6px;
+    border-radius: 3px;
+    font-size: 0.9rem;
 }
-.cardEx:hover::after {
- opacity: 0;
-}
-.cardEx:hover .cardEx-info {
- color: #f7ba2b;
- transition: color 1s;
+.review-text {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #111;
 }
 
 .parceiro-card {
@@ -932,4 +856,112 @@ iframe:hover{
   .margin-bottom-xlarge {
     margin-bottom: 48px;
   }
+}
+
+.subsist-menu{
+    margin-top: 100px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+.subsist-menu a{
+    margin-right: 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    animation: lights 5s 750ms linear infinite;
+}
+@keyframes lights {
+  0% {
+    color: hsl(0, 0%, 100%);
+    text-shadow:
+      0 0 1em hsla(0, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(0, 0%, 100%);
+    text-shadow:
+      0 0 1em hsla(0, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(0, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(0, 0%, 100%);
+    text-shadow:
+      0 0 1em hsla(0, 100%, 50%, 0.347),
+      0 0 0.125em hsla(318, 8%, 32%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(0, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(0, 0%, 100%);
+    text-shadow:
+      0 0 1em hsla(0, 100%, 50%, 0.5),
+      0 0 0.125em hsla(0, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(0, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(0, 0%, 100%);
+    text-shadow:
+      0 0 1em hsla(0, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }  
+}
+
+.subsist-section{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 100px;
+}
+
+.card-visao {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(90deg, #1a1a1a, #111);
+  padding: 30px;
+  max-width: 800px;
+  border-radius: 4px;
+  color: #ccc;
+}
+
+.card-visao i {
+  min-width: 70px;
+  height: 70px;
+  background-color: #6f0606;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #000;
+}
+
+.content h2 {
+  color: #6f0606;
+  margin: 0 0 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.content p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 16px;
 }
