@@ -130,3 +130,19 @@ document.addEventListener('DOMContentLoaded', () => {
         filterTeam('2025', defaultBtn);
     }
 });
+
+var swiper = new Swiper(".mySwiper", { // ou a sua classe do swiper
+    slidesPerView: 1, /* Força mostrar APENAS 1 card por vez */
+    spaceBetween: 20,
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
+});
