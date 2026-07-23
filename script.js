@@ -90,3 +90,43 @@ document.addEventListener('click', function(e) {
     }
   }
 });
+
+function filterTeam(year, buttonElement) {
+    // 1. Atualizar a classe 'active' nos botões
+    const buttons = document.querySelectorAll('.year-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    buttonElement.classList.add('active');
+
+    // 2. Filtrar os cards de membros
+    const cards = document.querySelectorAll('.subsist-time .card');
+    
+    cards.forEach(card => {
+        const memberYears = card.getAttribute('data-year');
+        
+        // Verifica se o ano selecionado está na lista de anos do membro
+        if (memberYears && memberYears.includes(year)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    // 3. Esconder subsistemas vazios no ano selecionado (Opcional, mas estético)
+    const sections = document.querySelectorAll('section.subsist-time');
+    sections.forEach(section => {
+        const visibleCards = section.querySelectorAll('.card[style*="display: block"]');
+        if (visibleCards.length === 0) {
+            section.style.display = 'none';
+        } else {
+            section.style.display = 'block';
+        }
+    });
+}
+
+// Executar a filtragem no ano padrão (2025) assim que a página carregar
+document.addEventListener('DOMContentLoaded', () => {
+    const defaultBtn = document.querySelector('.year-btn.active');
+    if (defaultBtn) {
+        filterTeam('2025', defaultBtn);
+    }
+});

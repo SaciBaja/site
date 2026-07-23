@@ -1081,3 +1081,33 @@ iframe:hover{
         font-size: 24px !important; 
     }
 }
+
+/* Container dos botões de ano */
+.year-selector-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0 20px 0;
+    flex-wrap: wrap;
+}
+
+/* Botão individual */
+.year-btn {
+    background-color: transparent;
+    color: #fff; /* Altere para a cor de texto do seu site */
+    border: 2px solid #6f0606; /* Cor temática (ex: vermelho/laranja do Baja) */
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover e estado Ativo */
+.year-btn:hover, .year-btn.active {
+    background-color: #6f0606; /* Cor de destaque ao clicar/passar o mouse */
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+}
