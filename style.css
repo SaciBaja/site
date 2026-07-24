@@ -5,7 +5,7 @@
 }
 html{
     scroll-behavior: smooth;
-    touch-action: manipulation; 
+    touch-action: pan-y; 
     overflow-x: hidden;
 }
 .header {
@@ -22,7 +22,7 @@ html{
 .bg-home {background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/capaSubsist.jpg);}
 body{
     overflow-x: hidden;
-    touch-action: manipulation; 
+    touch-action: pan-y; 
     background-color: #000;
 }
 .a{
