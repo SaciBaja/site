@@ -1186,7 +1186,6 @@ iframe:hover{
   }
 
   @media screen and (max-width: 600px) {
-    
     .header, 
     .header-container, 
     .sub-header {
@@ -1196,7 +1195,6 @@ iframe:hover{
         background-position: center center !important; 
         padding-bottom: 30px !important;
     }
-
     
     .header img, 
     .banner img {
@@ -1208,7 +1206,6 @@ iframe:hover{
 }
 
 @media screen and (max-width: 600px) {
-    
     .card-visao {
         display: flex;
         flex-direction: column; 
@@ -1254,7 +1251,6 @@ iframe:hover{
 }
 
 @media screen and (max-width: 600px) {
-    
     .titulo-ex-membros,
     .ex-membros-section,
     .relatos,
@@ -1264,12 +1260,25 @@ iframe:hover{
 }
 
 @media screen and (max-width: 600px) {
-    
     .footer-phrase,
     .frase-banner,
     .banner-bottom {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
-        margin-top: 20px !important;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 20px;
     }
+}
+
+.gestao, 
+.relatos, 
+.ex-membros,
+.gestao *,  
+.ex-membros * {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+div[class*="block"], 
+section {
+    opacity: 1 !important;
 }
