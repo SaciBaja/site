@@ -5,6 +5,8 @@
 }
 html{
     scroll-behavior: smooth;
+    touch-action: manipulation; 
+    overflow-x: hidden;
 }
 .header {
     min-height: 100vh;
@@ -20,6 +22,7 @@ html{
 .bg-home {background-image: radial-gradient(rgba(0, 0, 0, 0.7)), url(img/capaSubsist.jpg);}
 body{
     overflow-x: hidden;
+    touch-action: manipulation; 
     background-color: #000;
 }
 .a{
@@ -140,6 +143,7 @@ nav .fa{
     .nav-links ul{ padding: 20px; margin-top: 0px;} 
     .countdown-container { gap: 1px; }
     .timer-box span { font-size: 2rem; }
+    .nav-links ul li::after { display: none; }
 }
 
 
